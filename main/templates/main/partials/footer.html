@@ -1,0 +1,51 @@
+{% load static %}
+<div class="container-fluid bg-dark text-white-50 footer pt-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                <a href="{% url 'index' %}" class="d-inline-block mb-3">
+                    <h1 class="text-white">MedVis<span class="text-primary">.</span>AI</h1>
+                </a>
+                <p class="mb-0">At MedVisAI, we are dedicated to revolutionizing medical diagnostics through the power of Artificial Intelligence. Our platform specializes in X-ray image analysis and automated medical report generation .</p>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                <h5 class="text-white mb-4">Get In Touch</h5>
+                <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                <h5 class="text-white mb-4">Popular Link</h5>
+                <a class="btn btn-link" href="{% url 'about' %}">About Us</a>
+                <a class="btn btn-link" href="{% url 'contact' %}">Contact Us</a>
+                <a class="btn btn-link" href="{% url 'team' %}">Our team</a>
+                <a class="btn btn-link" href="{% url 'login' %}">Login</a>
+                <a class="btn btn-link" href="{% url 'signup' %}">signup</a>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                <h5 class="text-white mb-4">Our Services</h5>
+                <a class="btn btn-link" href="{% url 'service' %}">AI-Based X-ray Analysis</a>
+                <a class="btn btn-link" href="{% url 'service' %}">Automated Report Generation</a>
+                <a class="btn btn-link" href="{% url 'service' %}">Explainable AI Visualizations</a>
+                <a class="btn btn-link" href="{% url 'service' %}">Data Science</a>
+                <a class="btn btn-link" href="{% url 'service' %}">Online Access via MedVisAI</a>
+            </div>
+        </div>
+    </div>
+
+                    <div class="footer-menu">
+                        <a href="{% url 'index' %}">Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>

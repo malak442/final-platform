@@ -1,0 +1,23 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark p-0">
+    <div class="container">
+        <a href="{% url 'index' %}" class="navbar-brand">
+            <h1 class="text-white">MedVis<span class="text-dark">.</span>Tech</h1>
+        </a>
+        <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto">
+                <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
+                <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                <a href="{% url 'service' %}" class="nav-item nav-link">Services</a>
+                <a href="{% url 'login' %}" class="nav-item nav-link">Login</a>
+                <a href="{% url 'team' %}" class="nav-item nav-link">Our Team</a>
+                <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                
+          
+        </div>
+    </div>
+</nav>
+
