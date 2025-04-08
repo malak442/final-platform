@@ -12,9 +12,7 @@
 
 ![Services](Screenshots/Services.png)
 
-## Our Team
 
-![OurTeam](Screenshots/OurTeam.png)
 
 ## Contact Us
 
