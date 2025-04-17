@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Radiology Assistant</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .sidebar {
+      background: linear-gradient(to bottom, #e6f0fa, #d0e7f9);
+    }
+
+    .sidebar-item:hover {
+      background-color: #ffffff40;
+      transition: all 0.3s ease;
+    }
+
+    .chat-scroll {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="flex h-screen overflow-hidden bg-gray-50 text-gray-800">
+
+  <!-- Sidebar -->
+  <aside class="sidebar w-60 flex flex-col px-4 py-6 border-r border-blue-100 shadow-sm">
+    <h1 class="text-xl font-semibold text-blue-700 mb-10">AI Assistant</h1>
+    <nav class="flex flex-col space-y-4 text-sm font-medium">
+      <a href="#" class="sidebar-item px-3 py-2 rounded-md">Upload X-ray</a>
+      <a href="#" class="sidebar-item px-3 py-2 rounded-md">Reports</a>
+      <a href="#" class="sidebar-item px-3 py-2 rounded-md">Settings</a>
+    </nav>
+    <div class="mt-auto pt-10 text-sm">
+      <a href="{% url 'logout' %}" class="text-blue-600 hover:underline">Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main Area -->
+  <main class="flex-1 flex flex-col">
+    <!-- Header -->
+    <header class="bg-white border-b px-6 py-4">
+      <h2 class="text-lg font-bold text-blue-800">Radiology Chat Assistant</h2>
+    </header>
+
+    <!-- Chat Container -->
+    <section class="flex-1 p-6 overflow-y-auto space-y-6 chat-scroll bg-white">
+      {% if user_message %}
+      <div class="flex justify-end">
+        <div class="bg-blue-100 p-3 rounded-md max-w-md text-sm">
+          <p class="font-medium">You:</p>
+          <p>{{ user_message }}</p>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if ai_response %}
+      <div class="flex justify-start">
+        <div class="bg-gray-100 p-3 rounded-md max-w-md text-sm">
+          <p class="font-medium">AI:</p>
+          <p>{{ ai_response }}</p>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if gradcam_path %}
+      <div class="flex justify-start">
+        <div class="border p-3 rounded-md max-w-md bg-gray-50 text-sm">
+          <p class="font-medium mb-2">Grad-CAM Result:</p>
+          <img src="{{ gradcam_path }}" alt="Grad-CAM" class="rounded w-full h-auto" />
+        </div>
+      </div>
+      {% endif %}
+    </section>
+
+    <!-- Input Form -->
+    <form method="POST" enctype="multipart/form-data" class="bg-gray-50 border-t p-4 flex gap-4">
+   
+      <input type="file" name="xray_image" class="flex-1 border rounded-md text-sm p-2">
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 text-sm rounded-md hover:bg-blue-700 transition">Send</button>
+    </form>
+  </main>
+
+</body>
+</html>
